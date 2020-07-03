@@ -1,10 +1,23 @@
 package com.madhumankatha.groceryapp;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.versionedparcelable.ParcelField;
+
+@Entity(tableName = "Grocery")
 public class Item {
 
+    @PrimaryKey(autoGenerate = true)
     private long id;
 
+    @ColumnInfo(name = "itemname")
     private String itemName;
+
+    public Item(long id, String itemName) {
+        this.id = id;
+        this.itemName = itemName;
+    }
 
     public long getId() {
         return id;
